@@ -14,7 +14,6 @@ Le backend expose une API REST avec Django, et le frontend consomme cette API av
 - Vitesse du vent
 - Indicateur de chargement
 - Gestion des erreurs
-- Cache côté frontend avec Redux Toolkit
 
 ---
 
@@ -30,7 +29,6 @@ Le backend expose une API REST avec Django, et le frontend consomme cette API av
 ### Frontend
 - React
 - TypeScript
-- Redux Toolkit
 - Axios
 - TailwindCSS
 - daisyUI
