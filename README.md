@@ -55,9 +55,7 @@ source venv/bin/activate  # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 python manage.py runserver
 
-.env 
-SECRET_KEY=pg&*+b^_2_*n9wyv-vugvwu*u_!r^_8q_gyj7-_j#9r4-o#f2c
-WEATHER_API_KEY=7f3f1929479ae5be74614280f993b253
+
 
 
 
