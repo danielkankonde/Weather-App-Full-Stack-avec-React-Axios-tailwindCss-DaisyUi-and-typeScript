@@ -19,7 +19,7 @@ const Home: React.FC = () => {
     };
   return (
     <div className="min-h-screen bg-base-200 flex flex-col items-center justify-start p-6">
-      <h1 className="text-4xl font-bold mb-6">🌦️ Application Météo</h1>
+      <h1 className="text-4xl font-bold mb-6">🌦️ App Météo</h1>
 
       <WeatherForm onSearch={fetchWeather} />
 
@@ -32,7 +32,7 @@ const Home: React.FC = () => {
             className="btn btn-primary mt-4"
             onClick={goToForecast}
           >
-            Voir les prévisions détaillées
+            Voir les prévisions météo
           </button>
         </>
       )}

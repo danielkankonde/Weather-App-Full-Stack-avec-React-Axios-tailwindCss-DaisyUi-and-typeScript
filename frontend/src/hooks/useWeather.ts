@@ -2,19 +2,42 @@
 import { useState } from "react";
 import axios from "axios";
 
-export interface WeatherData {
-  name: string;
-  main: {
-    temp: number;
-    humidity: number;
-  };
-  weather: {
-    description: string;
-  }[];
-  wind: {
-    speed: number;
-  };
+// src/hooks/useWeather.ts
+
+export interface CurrentWeather {
+  Date: string;
+  Jour: string;
+  City: string;
+  Temperature: number;
+  Description: string;
+  Humidité: number;
+  "Vitesse du vent": number;
 }
+
+export interface HourlyForecast {
+  Moment: string;
+  Date: string;
+  Heure: string;
+  Jour: string;
+  Temperature: number;
+  Description: string;
+  Humidité: number;
+  "Vitesse du vend": number;
+}
+
+export interface DailyForecast {
+  date: string;
+  temp_min: number;
+  temp_max: number;
+  description: string;
+}
+
+export interface WeatherData {
+  "Méteo Actuelle": CurrentWeather;
+  "Prévision horaire": HourlyForecast[];
+  "Prévisions quotidiennes": DailyForecast[];
+}
+
 
 const CACHE_KEY = "weather_cache";
 const CACHE_TTL = 10 * 60 * 1000; // 10 minutes

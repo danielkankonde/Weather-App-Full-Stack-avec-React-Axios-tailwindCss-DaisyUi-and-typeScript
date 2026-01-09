@@ -24,7 +24,7 @@ const WeatherForm: React.FC<Props> = ({ onSearch }) => {
         onChange={(e) => setCity(e.target.value)}
         className="input input-bordered flex-1"
       />
-      <button type="submit" className="btn btn-primary">
+      <button type="submit" className="btn btn-primary" translate="no">
          Rechercher
       </button>
     </form>

@@ -1,7 +1,8 @@
 import React from "react";
+import type { WeatherData } from "../hooks/useWeather"; // <- type-only import
 
 interface WeatherCardProps {
-  data: any; // plus tard on pourra typer correctement
+  data: WeatherData | null; // autoriser null si pas encore chargé
 }
 
 const WeatherCard: React.FC<WeatherCardProps> = ({ data }) => {
@@ -10,32 +11,16 @@ const WeatherCard: React.FC<WeatherCardProps> = ({ data }) => {
   const current = data["Méteo Actuelle"];
 
   return (
-    <div className="card w-full max-w-md bg-base-100 shadow-xl border border-base-300 rounded-xl p-4 mb-6">
-      <div className="card-body space-y-2">
-        {/* Ville */}
-        <h2 className="text-3xl font-bold">{current.City}</h2>
-
-        {/* Description météo */}
-        <p className="text-lg italic text-white-600 capitalize">
-          {current.Description}
+    <div className="card w-full max-w-md bg-base-100 shadow-xl mb-4 border border-base-300">
+      <div className="card-body">
+        <h2 className="card-title">{current.City}</h2>
+        <p className="text-lg capitalize">
+          {current.Description} | 🌡️ {current.Temperature}°C
         </p>
-
-        {/* Température */}
-        <p className="text-2xl font-semibold">🌡️ {current.Temperature}°C</p>
-
-        {/* Humidité */}
-        {current["Humidité"] !== undefined && (
-          <p className="text-md">💧 Humidité : {current["Humidité"]}%</p>
-        )}
-
-        {/* Vent */}
-        {current["Vitesse du vent"] !== undefined && (
-          <p className="text-md">💨 Vent : {current["Vitesse du vent"]} m/s</p>
-        )}
-
-        {/* Badge */}
+        {current["Humidité"] !== undefined && <p>💧 Humidité : {current["Humidité"]}%</p>}
+        {current["Vitesse du vent"] !== undefined && <p> 💨 Vent : {current["Vitesse du vent"]} m/s</p>}
         <div className="card-actions justify-end">
-          <span className="badge badge-primary">Météo actuelle</span>
+          <span className="badge badge-primary" translate="no">Météo actuelle</span>
         </div>
       </div>
     </div>

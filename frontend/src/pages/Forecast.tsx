@@ -17,7 +17,7 @@ const Forecast: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-base-200 flex flex-col items-center justify-start p-6">
-      <h1 className="text-4xl font-bold mb-6">📅 Prévisions météo</h1>
+      <h1 className="text-4xl font-bold mb-6">📅 Prévisions météorologiques</h1>
 
       <button className="btn btn-secondary mb-6" onClick={() => navigate("/")}>
         ⬅ Retour à l'accueil
