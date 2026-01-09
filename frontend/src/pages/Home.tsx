@@ -19,7 +19,7 @@ const Home: React.FC = () => {
     };
   return (
     <div className="min-h-screen bg-base-200 flex flex-col items-center justify-start p-6">
-      <h1 className="text-4xl font-bold mb-6">🌦️ App Météo</h1>
+      <h1 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-bold mb-6">🌦️ App Météo</h1>
 
       <WeatherForm onSearch={fetchWeather} />
 
