@@ -2,25 +2,18 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 
-# Charger les variables d’environnement depuis .env
+# Charger les variables d’environnement
 load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
-# Clé secrète et debug
-SECRET_KEY = os.getenv("SECRET_KEY", "django-secret-key-temp")
-DEBUG = os.getenv("DEBUG", "False") == "True"
+SECRET_KEY = os.getenv("SECRET_KEY")
 
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "localhost").split(",")
+DEBUG = False
 
-# CORS
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",  # ton frontend Vite
-]
+ALLOWED_HOSTS = []
 
-# Applications installées
 INSTALLED_APPS = [
-    # Django default
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -30,16 +23,13 @@ INSTALLED_APPS = [
 
     # Third-party
     "rest_framework",
-    "corsheaders",
-
-    # Local apps
     "weather",
+
+    # Local apps (ajoutées plus tard)
 ]
 
-# Middleware
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
-    "corsheaders.middleware.CorsMiddleware",  # <-- important d'être en haut
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -68,12 +58,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "config.wsgi.application"
 
-# Internationalisation
 LANGUAGE_CODE = "fr-fr"
 TIME_ZONE = "UTC"
 USE_I18N = True
 USE_TZ = True
 
-# Static files
 STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
