@@ -12,7 +12,7 @@ load_dotenv()
 class WeatherService:
     """
     Service responsable de la communication avec l'API météo externe.
-    👉 Toute la logique externe est isolée ici (bonne pratique pro).
+    Toute la logique externe est isolée ici.
     """
 
     BASE_URL = "https://api.openweathermap.org/data/2.5/weather"
